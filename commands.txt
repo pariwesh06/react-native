@@ -1,0 +1,46 @@
+https://goo.gl/p4PM6k
+
+[sudo] npm install -g react-native-cli
+react-native init searchApp
+searchApp > react-native run-android
+
+
+export ANDROID_HOME=<sdk>
+
+simulate shake 
+
+PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
+PATH=%PATH%;%ANDROID_HOME%/tools;%ANDROID_HOME%/platform-tools
+
+adb shell input keyevent 82 
+
+UI-components
+styling
+navigation
+
+iOS -setup
+Native integration
+Redux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+npm i -g react-native-cli
+react-native run-android
+
+https://facebook.github.io/react-native/docs/getting-started.html
