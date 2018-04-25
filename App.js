@@ -13,12 +13,13 @@ type Props = {};
 export default class App extends Component<Props> {
   constructor(props) {
     super(props);
-    this.state = {
-      language: 'javascript'
+    this.state = {users:[],
+      language: 'javascript',
+      user:'ram'
     };
   }
   search() {
-    alert('searching');
+    this.setState({users: [...this.state.users, this.state.user]})
   }
   render() {
     return (
@@ -26,8 +27,8 @@ export default class App extends Component<Props> {
         <Text style={styles.welcome}>
           Userform, {this.state.language}
         </Text>
-        <TextInput />
-        <Button onPress={this.search} title="search" />
+        <TextInput value={this.state.user} onChangeText={(text)=> this.setState({user:text}) }/>
+        <Button onPress={this.search.bind(this)} title="search" />
         <Picker
           selectedValue={this.state.language}
           style={{ height: 50, width: 300, backgroundColor: 'red' }}
@@ -36,8 +37,8 @@ export default class App extends Component<Props> {
           <Picker.Item label="JavaScript" value="Javascript" />
         </Picker>
         <FlatList
-          data={[{ key: 'a' }, { key: 'b' }]}
-          renderItem={({ item }) => <Text>{item.key}</Text>}
+          data={this.state.users}
+          renderItem={({ item }) => <Text>{item}</Text>}
         />
       </View>
     );
